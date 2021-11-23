@@ -1,7 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
+:root {
+    --bg-body: #0D1117;
+    --tc-title: #2A77C4;
+    --tc-others: #E1E1E1;
+    --ff-title: 'Indie Flower', cursive;
+    --ff-others: 'Quicksand', sans-serif;
+}
+
 body {
-    background-color: #333;
+    background-color: var(--bg-body);
+}
+
+h1 {
+    font-family: var(--ff-title);
+    color: var(--tc-title);
+}
+
+p {
+    font-family: var(--ff-others);
+    color: var(--tc-others);
 }
