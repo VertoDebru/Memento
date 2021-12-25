@@ -6,8 +6,8 @@
 }
 
 :root {
-    --bg-body: #0D1117;
-    --bg-footer: #242f40;
+    --bg-body: #242f40;
+    --bg-footer: #0D1117;
     --bg-shadow: #333333;
     --tc-title: #2A77C4;
     --tc-others: #E1E1E1;
@@ -132,6 +132,10 @@ footer {
 
 footer a {
     margin: 10px;
+}
+
+footer a:hover > i {
+    color: var(--tc-title);
 }
 
 /* Boxs */
