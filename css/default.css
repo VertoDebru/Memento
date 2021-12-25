@@ -109,7 +109,7 @@ nav ul > li:hover {
         box-shadow: 0px 0px outset var(--bg-shadow);
     }
     100% {
-        box-shadow: 5px 5px inset var(--bg-shadow);
+        box-shadow: 5px 5px inset var(--bg-body);
     }
 }
 
