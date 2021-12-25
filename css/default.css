@@ -72,9 +72,13 @@ header {
 }
 
 nav {
+    display: flex;
     margin: 0 auto;
     width: 220px;
     height: 220px;
+}
+
+nav ul {
     display: flex;
     align-content: space-between;
     justify-content: space-between;
@@ -82,7 +86,7 @@ nav {
     list-style-type: none;
 }
 
-nav > li {
+nav ul > li {
     padding-top: 10px;
     width: 100px;
     height: 100px;
@@ -93,7 +97,7 @@ nav > li {
     cursor: pointer;
 }
 
-nav > li:hover {
+nav ul > li:hover {
     animation: hover-button .5s forwards;
 }
 
