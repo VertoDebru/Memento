@@ -6,9 +6,8 @@
 }
 
 :root {
-    --bg-body: #0D1117;
-    --bg-footer: #242f40;
-    --bg-shadow: #333333;
+    --bg-body: #242f40;
+    --bg-shadow: #0D1117;
     --tc-title: #2A77C4;
     --tc-others: #E1E1E1;
     --ff-default: 'Trebuchet MS';
@@ -72,17 +71,20 @@ header {
 }
 
 nav {
+    display: flex;
     margin: 0 auto;
     width: 220px;
     height: 220px;
+}
+
+nav ul {
     display: flex;
     align-content: space-between;
     justify-content: space-between;
     flex-wrap: wrap;
-    list-style-type: none;
 }
 
-nav > li {
+nav ul > li {
     padding-top: 10px;
     width: 100px;
     height: 100px;
@@ -93,20 +95,10 @@ nav > li {
     cursor: pointer;
 }
 
-nav > li:hover {
-    animation: hover-button .5s forwards;
-}
-
-@keyframes hover-button {
-    0% {
-        box-shadow: 5px 5px var(--bg-shadow);
-    }
-    50% {
-        box-shadow: 0px 0px outset var(--bg-shadow);
-    }
-    100% {
-        box-shadow: 5px 5px inset var(--bg-shadow);
-    }
+nav ul > li:hover {
+    padding: 15px 0 0 5px;
+    box-shadow: 5px 5px inset var(--bg-body);
+    transition: none;
 }
 
 main {
@@ -132,6 +124,10 @@ footer {
 
 footer a {
     margin: 10px;
+}
+
+footer a:hover > i {
+    color: var(--tc-title);
 }
 
 /* Boxs */
