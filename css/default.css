@@ -7,7 +7,6 @@
 
 :root {
     --bg-body: #242f40;
-    --bg-footer: #0D1117;
     --bg-shadow: #0D1117;
     --tc-title: #2A77C4;
     --tc-others: #E1E1E1;
@@ -83,7 +82,6 @@ nav ul {
     align-content: space-between;
     justify-content: space-between;
     flex-wrap: wrap;
-    list-style-type: none;
 }
 
 nav ul > li {
