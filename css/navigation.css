@@ -1,0 +1,44 @@
+nav {
+    display: flex;
+    margin: 0 auto;
+    width: 220px;
+    height: 220px;
+}
+
+nav ul {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+nav ul > a li {
+    padding-top: 10px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: var(--tc-title);
+    border: 1px solid var(--tc-others);
+    box-shadow: 5px 5px var(--bg-shadow);
+    cursor: pointer;
+}
+
+nav ul > a li:hover {
+    animation: nav-shadow .8s forwards;
+}
+
+@keyframes nav-shadow {
+    0% {
+        box-shadow: 5px 5px var(--bg-shadow);
+    }
+    50% {
+        padding: 10px 0 0 0px;
+        box-shadow: 0px 0px outset var(--bg-shadow);
+    }
+    100% {
+        padding: 15px 0 0 5px;
+        box-shadow: 5px 5px inset var(--bg-body);
+    }
+}

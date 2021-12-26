@@ -60,6 +60,15 @@ ul {
     padding-inline-start: 0;
 }
 
+a {
+    text-decoration: none;
+    color: var(--tc-title);
+}
+
+a:hover {
+    color: var(--tc-others);
+}
+
 /* Semantic Tags */
 header {
     margin: 0 auto;
@@ -68,37 +77,6 @@ header {
     min-height: 10vh;
     max-height: 10vh;
     text-align: center;
-}
-
-nav {
-    display: flex;
-    margin: 0 auto;
-    width: 220px;
-    height: 220px;
-}
-
-nav ul {
-    display: flex;
-    align-content: space-between;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-nav ul > li {
-    padding-top: 10px;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    background-color: var(--tc-title);
-    border: 1px solid var(--tc-others);
-    box-shadow: 5px 5px var(--bg-shadow);
-    cursor: pointer;
-}
-
-nav ul > li:hover {
-    padding: 15px 0 0 5px;
-    box-shadow: 5px 5px inset var(--bg-body);
-    transition: none;
 }
 
 main {
@@ -136,6 +114,9 @@ footer a:hover > i {
 .tc-white {
     color: var(--tc-others);
 }
+.tc-blue {
+    color: var(--tc-title);
+}
 .ts-big-icon {
     font-size: var(--fs-big-icon);
 }
@@ -147,10 +128,16 @@ footer a:hover > i {
 }
 
 @media screen and (max-width: 640px) {
+    header, main, footer {
+        width: 90vw;
+    }
     header p {
         font-size: 1em;
     }
     h1 {
         font-size: 1.8em;
+    }
+    h2 {
+        font-size: var(--fs-others);
     }
 }
