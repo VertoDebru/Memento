@@ -1,0 +1,100 @@
+/* Semantic Tags */
+main {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+ul > a li {
+    margin: 10px 0px;
+    padding: 5px;
+    background-color: var(--tc-title);
+    border: 1px solid var(--tc-others);
+    box-shadow: 5px 5px var(--bg-shadow);
+    color: var(--tc-others);
+    cursor: pointer;
+}
+
+ul > a li:hover {
+    animation: nav-shadow .8s forwards;
+}
+
+@keyframes nav-shadow {
+    0% {
+        box-shadow: 5px 5px var(--bg-shadow);
+    }
+    100% {
+        box-shadow: 0px 0px var(--bg-body);
+    }
+}
+
+/* Code */
+code {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    width: 90%;
+    background-color: var(--bg-shadow);
+    border: 1px solid var(--tc-others);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav ul > li {
+    padding-top: 10px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: var(--tc-title);
+    border: 1px solid var(--tc-others);
+    box-shadow: 5px 5px var(--bg-shadow);
+    cursor: pointer;
+}
+
+nav ul > li:hover {
+    padding: 15px 0 0 5px;
+    box-shadow: 5px 5px inset var(--bg-body);
+    transition: none;
+}
+
+nav a {
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    background-color: var(--tc-title);
+    border: 1px solid var(--tc-others);
+    cursor: pointer;
+}
+
+/* Custom Styles */
+.code-desc {
+    margin: 5px auto -10px auto;
+    width: 90%;
+    font-size: 0.8em;
+}
+.code-docs {
+    margin: -10px auto 0px auto;
+    width: 90%;
+    text-align: right;
+    font-size: 0.9em;
+}
