@@ -14,7 +14,7 @@ nav ul {
     padding-inline-start: 0;
 }
 
-nav ul > li {
+nav ul > a li {
     padding-top: 10px;
     width: 100px;
     height: 100px;
@@ -25,7 +25,7 @@ nav ul > li {
     cursor: pointer;
 }
 
-nav ul > li:hover {
+nav ul > a li:hover {
     animation: nav-shadow .8s forwards;
 }
 
