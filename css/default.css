@@ -128,10 +128,16 @@ footer a:hover > i {
 }
 
 @media screen and (max-width: 640px) {
+    header, main, footer {
+        width: 90vw;
+    }
     header p {
         font-size: 1em;
     }
     h1 {
         font-size: 1.8em;
+    }
+    h2 {
+        font-size: var(--fs-others);
     }
 }
