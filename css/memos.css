@@ -41,6 +41,7 @@ code {
     width: 90%;
     background-color: var(--bg-shadow);
     border: 1px solid var(--tc-others);
+    overflow: auto;
 }
 
 /* Navigation */
