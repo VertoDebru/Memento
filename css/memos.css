@@ -99,3 +99,28 @@ nav a {
     text-align: right;
     font-size: 0.9em;
 }
+.informations {
+    position: relative;
+    margin: 0 auto 5px auto;
+    padding: 10px;
+    width: 90%;
+    min-height: 5em;
+    text-align: center;
+    font-size: 0.9em;
+    background-color: var(--tc-title);
+    border-radius: 10px;
+    text-shadow: 2px 2px 1px #242f40;
+}
+.informations::before {
+    content: "\f05a";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: xxx-large;
+    padding: 0px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #FFFFFF33;
+    text-shadow: none;
+}
