@@ -131,6 +131,10 @@ footer a:hover > i {
     header, main, footer {
         width: 90vw;
     }
+    article {
+        height: 70vh;
+        overflow: auto;
+    }
     header p {
         font-size: 1em;
     }
