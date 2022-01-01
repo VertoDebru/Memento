@@ -9,7 +9,7 @@ server.on('error', (err) => {
 });
 server.on('listening', () => {
     const urlServer = server.address();
-    const portServer = server.address().port;
+    const portServer = app.PORT;
     console.log(`Server On | ${urlServer}:${portServer}`);
 });
 
