@@ -1,7 +1,7 @@
 const http = require('http');
 const app = require('./app');
 
-app.set('port', process.env.PORT || 8081);
+app.set('port', process.env.PORT || 3000);
 const server = http.createServer(app);
 
 server.on('error', (err) => {
@@ -13,4 +13,4 @@ server.on('listening', () => {
     console.log(`Server On | ${urlServer}:${portServer}`);
 });
 
-server.listen(process.env.PORT || 8081);
+server.listen(process.env.PORT || 3000);
