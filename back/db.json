@@ -1,0 +1,57 @@
+{
+    "data":
+    [
+        {
+            "id": "html5",
+            "title": "HTML 5",
+            "icon": "fa-html5",
+            "memos": 
+            [
+                {
+                    "title": "Les Balises Sémantiques.",
+                    "memo": "Est in sit in magna cupidatat qui tempor nulla exercitation in magna ex culpa.{CODE}<video src=''>{/CODE}Proident do nostrud pariatur aute commodo Lorem. {RESULT}<video src=''>{/RESULT}Dolore fugiat cupidatat exercitation ea.{CODE}<a href='https://github.com/vertodebru' target='_blank' rel='noopener' title='GitHub'><i class='fab fa-github tc-white ts-big'></i></a>{/CODE}Voluptate ipsum qui laborum ad id.{RESULT}<a href='https://github.com/vertodebru' target='_blank' rel='noopener' title='GitHub'><i class='fab fa-github tc-white ts-big'></i></a>{/RESULT}"
+                }
+            ]
+        },
+        {
+            "id": "css3",
+            "title": "CSS 3",
+            "icon": "fa-css3-alt",
+            "memos": 
+            [
+                {
+                    "title": "Les Pseudo Classes.",
+                    "memo": "{CODE}:hover{/CODE}Déclenché au survol de la souris.{CODE}:active{/CODE}Déclenché au clic.{CODE}:focus{/CODE}Déclenché lors du focus. (Selection avec le clavier){CODE}:valid{/CODE}Déclenché lors de la validation de donnée attendu.{CODE}:invalid{/CODE}Déclenché lors de l'invalidité de donnée.{CODE}:not{/CODE}Déclenché quand l'argument n'est pas présent.{CODE}:checked{/CODE}Déclenché au checkbox/option/radio.{CODE}:enabled{/CODE}Déclenché quand un élément est actif.{CODE}:disabled{/CODE}Déclenché quand un élément est désactivé."
+                }
+            ]
+        },
+        {
+            "id": "js",
+            "title": "Javascript",
+            "icon": "fa-js",
+            "memos": 
+            [
+                {
+                    "title": "D.R.Y.",
+                    "memo": "Tempor ullamco amet ut laboris duis proident magna ad sint amet eu minim."
+                }
+            ]
+        },
+        {
+            "id": "github",
+            "title": "GitHub",
+            "icon": "fa-github",
+            "memos": 
+            [
+                {
+                    "title": "Initialisation à Git.",
+                    "memo": "Télécharger et intaller Git, une fois installer il va falloir le configurer.{CODE}git config --global user.name 'votrenom'{/CODE}{CODE}git config --global user.email 'contact@yourname.com'{/CODE}{CODE}git config --global color.diff auto{/CODE}{CODE}git config --global color.status auto{/CODE}{CODE}git config --global color.branch auto{/CODE}{CODE}git config --global core.editor vim{/CODE}{CODE}git config --global merge.tool vimdiff{/CODE}{INFO}Tout ceci permettra de configurer sans devoir entrer vos informations a chaque fois.{/INFO}Pour vérifier les parametres de configuration :{CODE}git config --list{/CODE}"
+                },
+                {
+                    "title": "Les commandes Git.",
+                    "memo": "Initialiser Git sur un projet :{CODE}git init{/CODE}{INFO}Cette commande va créer une dossier caché nommer '.git'.{/INFO}Définir le Git (Dépôt distant) du projet :{CODE}git remote add origin url.com/Projet.git{/CODE}{CODE}git branch -M main{/CODE}{CODE}git push -u origin main{/CODE}{INFO}'origin' représente le nom court pour appeler le dépôt. 'main' représente la branche.{/INFO}Pour indexer un fichier au projet :{CODE}git add fichier.ext{/CODE}Ajouter un commit :{CODE}git commit -m 'Message...'{/CODE}"
+                }
+            ]
+        }
+    ]
+}

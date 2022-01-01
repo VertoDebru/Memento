@@ -1,0 +1,24 @@
+{
+  "name": "memento-back",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Tony Vervoot",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VertoDebru/Memento.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VertoDebru/Memento/issues"
+  },
+  "homepage": "https://github.com/VertoDebru/Memento#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2"
+  }
+}
