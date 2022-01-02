@@ -21,7 +21,7 @@
             [
                 {
                     "title": "Les Pseudo Classes.",
-                    "memo": "{CODE}:hover{/CODE}Déclenché au survol de la souris.{CODE}:active{/CODE}Déclenché au clic.{CODE}:focus{/CODE}Déclenché lors du focus. (Selection avec le clavier){CODE}:valid{/CODE}Déclenché lors de la validation de donnée attendu.{CODE}:invalid{/CODE}Déclenché lors de l'invalidité de donnée.{CODE}:not{/CODE}Déclenché quand l'argument n'est pas présent.{CODE}:checked{/CODE}Déclenché au checkbox/option/radio.{CODE}:enabled{/CODE}Déclenché quand un élément est actif.{CODE}:disabled{/CODE}Déclenché quand un élément est désactivé."
+                    "memo": "Une pseudo-classe est un mot-clé qui peut être ajouté à un sélecteur afin d'indiquer l'état spécifique dans lequel l'élément doit être pour être ciblé par la déclaration.{CODE}:hover{/CODE}Déclenché au survol de la souris.{CODE}:active{/CODE}Déclenché au clic.{CODE}:focus{/CODE}Déclenché lors du focus. (Selection avec le clavier){CODE}:valid{/CODE}Déclenché lors de la validation de donnée attendu.{CODE}:invalid{/CODE}Déclenché lors de l'invalidité de donnée.{CODE}:not{/CODE}Déclenché quand l'argument n'est pas présent.{CODE}:checked{/CODE}Déclenché au checkbox/option/radio.{CODE}:enabled{/CODE}Déclenché quand un élément est actif.{CODE}:disabled{/CODE}Déclenché quand un élément est désactivé."
                 }
             ]
         },
