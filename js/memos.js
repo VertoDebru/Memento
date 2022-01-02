@@ -1,4 +1,4 @@
-const urlAPI = "http://localhost:3000/api/memento/";
+const urlAPI = "https://vervoot.alwaysdata.net/nodejs/api/memento/";
 const urlParams = new URLSearchParams(document.location.search);
 const category = urlParams.get("cat");
 

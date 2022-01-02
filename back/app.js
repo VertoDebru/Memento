@@ -9,7 +9,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/api/memento', (req,res) => {
+app.get('/nodejs/api/memento', (req,res) => {
     console.log(`----------------------`);
     console.log(`Recover data from API memento.`);
     if(res.statusCode !== 200) {
