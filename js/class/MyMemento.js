@@ -150,6 +150,7 @@ class Mymemento {
         }
     }
 
+    // Encode in HTML format.
     encodeHtml(text) {
         return text
          .replace(/&/g, "&amp;")
@@ -178,7 +179,6 @@ class Mymemento {
         return myTag;
     }
 
-
     // Return 'numbers' of {TAG} in 'memo' text.
     countTags() {
         let myMemo = this.data.memos[this.memoId].memo;
@@ -189,5 +189,10 @@ class Mymemento {
         catch (error) {
             return 0;
         }
+    }
+
+    // Post new db.json
+    postDb() {
+        
     }
 }

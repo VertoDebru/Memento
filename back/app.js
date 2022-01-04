@@ -9,6 +9,29 @@ app.use((req, res, next) => {
     next();
 });
 
+app.post('/nodejs/api/memento', (req,res) => {
+    console.log(`----------------------`);
+    console.log(`Update data from API memento.`);
+    if(res.statusCode !== 200) {
+        throw new Error('App not found!');
+    }
+    else {
+        const fileData = fs.readFileSync('db.json', (res) => {
+            try {
+                console.log('db.json');
+            }
+            catch {
+                //console.error(error);
+            }
+        });
+        res.json(JSON.parse(fileData));
+
+    }
+    console.log(`Update data finished.`);
+    console.log(`----------------------`);
+    res.send('POST request to the homepage');
+});
+
 app.get('/nodejs/api/memento', (req,res) => {
     console.log(`----------------------`);
     console.log(`Recover data from API memento.`);
@@ -22,19 +45,5 @@ app.get('/nodejs/api/memento', (req,res) => {
     console.log(`Recover data finished.`);
     console.log(`----------------------`);
 });
-
-app.post('/nodejs/api/memento', (req,res) => {
-    console.log(`----------------------`);
-    console.log(`Update data from API memento.`);
-    if(res.statusCode !== 200) {
-        throw new Error('App not found!');
-    }
-    else {
-        const fileData = fs.readFileSync('db.json');
-        res.json(JSON.parse(fileData));
-    }
-    console.log(`Update data finished.`);
-    console.log(`----------------------`);
-})
 
 module.exports = app;
