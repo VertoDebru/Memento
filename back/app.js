@@ -23,4 +23,19 @@ app.get('/nodejs/api/memento', (req,res) => {
     console.log(`----------------------`);
 });
 
+
+app.post('/nodejs/api/memento', (req,res) => {
+    console.log(`----------------------`);
+    console.log(`Update data from API memento.`);
+    if(res.statusCode !== 200) {
+        throw new Error('App not found!');
+    }
+    else {
+        const fileData = fs.readFileSync('db.json');
+        res.json(JSON.parse(fileData));
+    }
+    console.log(`Update data finished.`);
+    console.log(`----------------------`);
+})
+
 module.exports = app;
