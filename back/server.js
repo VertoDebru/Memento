@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const DB_MONGODB = process.env.DB_MONGODB;
 
 const MY_HOST = process.env.MY_HOST;
-const MY_PORT = process.env.MY_PORT;
+const MY_PORT = process.env.PORT || process.env.MY_PORT;
 
 app.set('port', MY_PORT);
 const server = http.createServer(app);
