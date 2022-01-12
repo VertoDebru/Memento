@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 });
 app.use(bodyParser.json());
 
-app.use('/api/categories', routesCategories);
-app.use('/api/memos', routesMemos);
+app.use('/api/memento/categories', routesCategories);
+app.use('/api/memento/memos', routesMemos);
 
 module.exports = app;

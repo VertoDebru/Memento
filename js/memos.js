@@ -1,20 +1,25 @@
-const urlAPI = "https://vervoot.alwaysdata.net/nodejs/api/memento/";
+const urlAPI = "https://vervoot.alwaysdata.net/nodejs/api/memento/memos";
 const urlParams = new URLSearchParams(document.location.search);
-const category = urlParams.get("cat");
+const categoryID = urlParams.get("cat");
+const memoID = urlParams.get("id");
 
-fetch(urlAPI)
-.then( (res) => {
-    if(res.ok) {
-        return res.json();
-    }
-})
-.then( (data) => {
-        data = data.data;
-        data.forEach(value => {
-            if(value.id == category) return new Mymemento(value).Set();
-        });
-})
-.catch( (err) => {
-        console.log('Error FetchAPI :');
-        console.error(err);
-})
+const loadAPI = () => {
+        let urlMemo;
+        if(categoryID) urlMemo = `?cat=${categoryID}`;
+        if(memoID) urlMemo = `?id=${memoID}`;
+        const url = urlAPI+urlMemo;
+        fetch(url)
+        .then( (res) => {
+                if(res.ok) return res.json();
+        })
+        .then( (data) => {
+                if(categoryID) data = data.category;
+                new Mymemento(data).Set();
+        })
+        .catch( (err) => {
+                console.log('Error loadAPI :');
+                console.error(err);
+        })
+}
+
+loadAPI();
