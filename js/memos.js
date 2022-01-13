@@ -1,4 +1,4 @@
-const urlAPI = "https://vervoot.alwaysdata.net/nodejs/api/memento/memos";
+const urlAPI = "https://vervoot.alwaysdata.net/api/memento/memos";
 const urlParams = new URLSearchParams(document.location.search);
 const categoryID = urlParams.get("cat");
 const memoID = urlParams.get("id");
