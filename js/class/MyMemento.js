@@ -99,9 +99,14 @@ class Mymemento {
         if(!this.memoId) {
             let memosLink = '';
             let ul = document.createElement("ul");
-            this.data.forEach( value => {
-                memosLink += `<a href="memos.html?id=${value._id}"><li><h3>${value.title}</h3></li></a>`;
-            })
+            if(this.data.length > 0) {
+                this.data.forEach( value => {
+                    memosLink += `<a href="memos.html?id=${value._id}"><li><h3>${value.title}</h3></li></a>`;
+                })
+            }
+            else {
+                memosLink += `<li><p>Aucun mémo dans cette catégorie.</p></li>`;
+            }
             ul.innerHTML = memosLink;
 
             sectionBox.appendChild(ul);
