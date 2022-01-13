@@ -104,9 +104,7 @@ class Mymemento {
                     memosLink += `<a href="memos.html?id=${value._id}"><li><h3>${value.title}</h3></li></a>`;
                 })
             }
-            else {
-                memosLink += `<li><p>Aucun mémo dans cette catégorie.</p></li>`;
-            }
+            else memosLink += `<li><p>Aucun mémo dans cette catégorie.</p></li>`;
             ul.innerHTML = memosLink;
 
             sectionBox.appendChild(ul);
