@@ -3,7 +3,7 @@ const router = express.Router();
 
 const ctrlMemos = require('../controllers/memos');
 
+router.post('/add', ctrlMemos.addMemo);
 router.get('/', ctrlMemos.getMemos);
-router.post('/', ctrlMemos.addNewMemo);
 
 module.exports = router;

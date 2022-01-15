@@ -28,16 +28,19 @@ exports.getMemos = (req,res, next) => {
     }
 };
 
-exports.addNewMemo = (req,res, next) => {
+exports.addMemo = (req,res, next) => {
     console.log(`----------------------`);
     console.log(`Add memo in database.`);
-    
-    Memos.find({ nameId: req.params.cat })
-    .then( (memo) => {
-        console.log(memo);
-        res.status(200).json({ memo });
-        console.log(`Add memo finished.`);
-        console.log(`----------------------`);
+
+    if(!req.body.catId || !req.body.title || !req.body.memo) {
+        return res.status(400).send(new Error('Mauvais requete!'));
+    }
+    let memo = new Memos({
+        ...req.body
+    });
+    memo.save()
+    .then( () => {
+        res.status(200).json({ message: `Memo '${req.body.title}' added !` });
     })
-    .catch(error => res.status(401).json({ error }));
+    .catch( (error) => { res.status(500).json(new Error(error))});
 };
