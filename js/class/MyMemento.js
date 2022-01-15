@@ -31,60 +31,14 @@ class Mymemento {
     // Setting up main page.
     setMain() {
         // Add categories menu
-        let navBox = '<nav><ul>';
+        let navBox = document.createElement("nav");
+        let ul = document.createElement("ul");
         this.data.forEach(value => {
-            navBox += `<a href="memos.html?cat=${value.nameId}"><li title="${value.name}"><i class="fab ${value.icon} tc-white ts-big-icon"></i></li></a>`;
+            ul.innerHTML += `<a href="memos.html?cat=${value.nameId}"><li title="${value.name}"><i class="fab ${value.icon} tc-white ts-big-icon"></i></li></a>`;
         });
-        navBox += `</ul></nav>`;
-        this.mainBox.innerHTML = navBox;
-        /*
-        let addMemo = document.createElement("button");
-        addMemo.innerHTML = `<i class="fas fa-plus tc-white ts-big-icon" aria-hidden="true"></i>`;
-        addMemo.addEventListener('click', () => {
-            // Create forms.
-            let divTag = document.createElement("div");
-            divTag.classList.add("post");
-            let formNameId = document.createElement("input");
-            formNameId.type = "text";
-            formNameId.name = "nameId";
-            formNameId.id = "nameId";
-            divTag.appendChild(formNameId);
-            let formName = document.createElement("input");
-            formName.type = "text";
-            formName.name = "name";
-            formName.id = "name";
-            divTag.appendChild(formName);
-            let formIcon = document.createElement("input");
-            formIcon.type = "text";
-            formIcon.name = "icon";
-            formIcon.id = "icon";
-            divTag.appendChild(formIcon);
-            let formBtn = document.createElement("button");
-            formBtn.addEventListener('click', () => {
-                fetch(`http://127.0.0.1:3000/api/categories`, {
-                    method: 'POST',
-                    headers: {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ nameId: formNameId.value, name: formName.value, icon: formIcon.value })
-                })
-                .then( (res) => {
-                    if(res.ok) {
-                        window.location.reload();
-                    }
-                })
-                .catch( error => { console.error(error); })
-            });
-            divTag.appendChild(formBtn);
-
-            this.mainBox.appendChild(divTag);
-            // Hide this button
-            addMemo.remove();
-            console.log("View Form.");
-        });
-        this.mainBox.appendChild(addMemo);
-        */
+        ul.appendChild(this.addButton("LINKC"));
+        navBox.appendChild(ul);
+        this.mainBox.appendChild(navBox);
     }
 
     // Setting up articles page.
@@ -97,36 +51,199 @@ class Mymemento {
         this.addNavigation();
         // Add List Memo if urlParams.id no exist.
         if(!this.memoId) {
-            let memosLink = '';
             let ul = document.createElement("ul");
             if(this.data.length > 0) {
                 this.data.forEach( value => {
-                    memosLink += `<a href="memos.html?id=${value._id}"><li><h3>${value.title}</h3></li></a>`;
+                    ul.innerHTML += `<a href="memos.html?id=${value._id}"><li><h3>${value.title}</h3></li></a>`;
                 })
             }
-            else memosLink += `<li><p>Aucun mémo dans cette catégorie.</p></li>`;
-            ul.innerHTML = memosLink;
-
+            else ul.innerHTML += `<li><p>Aucun mémo dans cette catégorie.</p></li>`;
+            ul.appendChild(this.addButton("LINKM"));
             sectionBox.appendChild(ul);
-            this.mainBox.appendChild(sectionBox);
         }
         // Else add Memo
         else {
             titlePage = `${this.data.title} | ${titlePage}`;
-
             let articleBox = document.createElement("article");
-            let h2 = document.createElement("h2");
-            h2.textContent = this.data.title;
-            articleBox.appendChild(h2);
-
-            let memoText = document.createElement("p");
-            memoText.innerHTML = this.decodeMemo();
-            articleBox.appendChild(memoText);
-            
+            articleBox.innerHTML = `<h2>${this.data.title}</h2><p>${this.decodeMemo()}</p>`;
             sectionBox.appendChild(articleBox);
-            this.mainBox.appendChild(sectionBox);
         }
+        this.mainBox.appendChild(sectionBox);
         document.title = titlePage;
+    }
+
+    // Add Button
+    addButton(type) {
+        switch (type) {
+            case 'CODE':
+                var btn = document.createElement("button");
+                btn.id = "CODE";
+                btn.textContent = 'CODE';
+                this.addEventBtn(btn);
+                return btn;
+        
+            case 'RESULT':
+                var btn = document.createElement("button");
+                btn.id = "RESULT";
+                btn.textContent = 'RESULT';
+                this.addEventBtn(btn);
+                return btn;
+        
+            case 'INFO':
+                var btn = document.createElement("button");
+                btn.id = "INFO";
+                btn.textContent = 'INFO';
+                this.addEventBtn(btn);
+                return btn;
+
+            case 'ADDC':
+                var btn = document.createElement("button");
+                btn.id = "ADDC";
+                btn.textContent = 'Ajouter';
+                this.addEventBtn(btn);
+                return btn;
+
+            case 'ADDM':
+                var btn = document.createElement("button");
+                btn.id = "ADDM";
+                btn.textContent = "Ajouter";
+                this.addEventBtn(btn);
+                return btn;
+
+            case 'LINKM':
+                var btn = document.createElement("a");
+                btn.id = "LINKM";
+                btn.innerHTML = "<li><h3> + Add memo</h3></li>";
+                this.addEventBtn(btn);
+                return btn;
+
+            case 'LINKC':
+                var btn = document.createElement("a");
+                btn.id = "LINKC";
+                btn.innerHTML = `<li><i class="fa fa-plus tc-white ts-big-icon" aria-hidden="true"></i></li>`;
+                this.addEventBtn(btn);
+                return btn;
+
+            default:
+                break;
+        }
+    }
+
+    // Add Event on button
+    addEventBtn(button) {
+        switch (button.id) {
+            // CODE CODE
+            case 'CODE':
+                button.addEventListener('click', () => {
+                    var inputMemo = document.getElementById("memo");
+                    var varCode = "{CODE}{/CODE}";
+                    inputMemo.value += `${varCode}`;
+                });
+                break;
+            // CODE RESULT
+            case 'RESULT':
+                button.addEventListener('click', () => {
+                    var inputMemo = document.getElementById("memo");
+                    var varCode = "{RESULT}{/RESULT}";
+                    inputMemo.value += `${varCode}`;
+                });
+                break;
+            // CODE INFO
+            case 'INFO':
+                button.addEventListener('click', () => {
+                    var inputMemo = document.getElementById("memo");
+                    var varCode = "{INFO}{/INFO}";
+                    inputMemo.value += `${varCode}`;
+                });
+                break;
+            // ADD CATEGORY
+            case 'ADDC':
+                button.addEventListener('click', () => {
+                    let nId = document.getElementById("nameId").value;
+                    let n = document.getElementById("name").value;
+                    let icon = document.getElementById("icon").value;
+                    // Creation des informations pour l'envoi.
+                    let body = { nameId: nId, name: n, icon: icon };
+                    let initBody = {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify( body )
+                    };
+                    
+                    fetch('https://vervoot.alwaysdata.net/api/memento/categories/add', initBody)
+                    .then( (res) => {
+                        if(res.ok) return res.json();
+                    })
+                    .then( () => {
+                            window.location.reload();
+                    })
+                    .catch( (error) => { return console.error(error); });
+                });
+                break;
+            // ADD MEMO
+            case 'ADDM':
+                button.addEventListener('click', () => {
+                    let inputTitle = document.getElementById("title");
+                    let inputMemo = document.getElementById("memo");
+                    // Creation des informations pour l'envoi.
+                    let body = { catId: this.cat, title: inputTitle.value, memo: inputMemo.value };
+                    let initBody = {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        method: 'POST',
+                        body: JSON.stringify( body )
+                    };
+                    
+                    fetch('https://vervoot.alwaysdata.net/api/memento/memos/add', initBody)
+                    .then( (res) => {
+                        if(res.ok) return res.json();
+                    })
+                    .then( () => {
+                            window.location.reload();
+                    })
+                    .catch( (error) => { return console.error(error); });
+                });
+                break;
+
+            case 'LINKM':
+                button.addEventListener('click', () => {
+                    let divBtn = document.createElement("div");
+                    let textMemo = document.createElement("textarea");
+                    textMemo.id = "memo";
+                    textMemo.name = "memo";
+                    let btnCode = this.addButton('CODE');
+                    let btnResult = this.addButton('RESULT');
+                    let btnInfo = this.addButton('INFO');
+                    let btnAdd = this.addButton('ADDM');
+                    divBtn.append(btnCode, btnResult, btnInfo);
+    
+                    let divTag = document.createElement("div");
+                    divTag.classList.add("post");
+                    divTag.innerHTML = "<p>Memo title :</p><input type='text' id='title' name='title'><p>Memo :</p>";
+                    divTag.append(divBtn, textMemo, btnAdd);
+    
+                    this.mainBox.appendChild(divTag);
+                });
+                break;
+
+            case 'LINKC':
+                button.addEventListener('click', () => {
+                    // Create forms.
+                    let divTag = document.createElement("div");
+                    divTag.classList.add("post");
+                    divTag.innerHTML = `<p>nameId :</p><input type='text' name='nameId' id='nameId'><p>name :</p><input type='text' name='name' id='name'><p>icon :</p><input type='text' name='icon' id='icon'>`;
+                    // Add button
+                    divTag.appendChild(this.addButton("ADDC"));
+        
+                    this.mainBox.appendChild(divTag);
+                });
+                break;
+            default:
+                break;
+        }
     }
 
     // Add navigation menu
