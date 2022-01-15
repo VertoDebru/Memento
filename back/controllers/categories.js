@@ -20,14 +20,16 @@ exports.addNewCategory = (req,res) => {
     console.log(`Add category in API memento.`);
 
     if(!req.body.nameId || !req.body.name || !req.body.icon) {
-        return res.status(400).send(new Error('Bad request!'));
+        return res.status(400).send(new Error('Mauvais requete!'));
     }
     let category = new Category({
         ...req.body
     });
     category.save()
-    .then(() => res.status(200).json({ nameId: req.body.nameId, name: req.body.name, icon: req.body.icon }))
-    .catch(error => res.status(400).json({ error }));
+    .then( () => {
+        res.status(200).json({ message: `Category '${req.body.name}' added !` });
+    })
+    .catch( (error) => { res.status(500).json(new Error(error))});
 
     console.log(`Add category finished.`);
     console.log(`----------------------`);
