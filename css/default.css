@@ -69,6 +69,30 @@ a:hover {
     color: var(--tc-others);
 }
 
+/* Form style */
+input {
+    width: 90vw;
+    margin-bottom: 0.5em;
+    padding: 5px;
+    font-size: var(--fs-others);
+}
+button {
+    padding: 10px;
+    min-width: 80px;
+    text-align: center;
+    font-size: var(--fs-others);
+    color: var(--tc-others);
+    background-color: var(--tc-title);
+    border: 1px solid var(--tc-others);
+    box-shadow: 5px 5px var(--bg-shadow);
+    cursor: pointer;
+}
+textarea {
+    margin: 0.5em;
+    width: 90vw;
+    height: 30vh;
+}
+
 /* Semantic Tags */
 header {
     margin: 0 auto;
