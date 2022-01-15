@@ -1,19 +1,19 @@
 nav {
     display: flex;
     margin: 0 auto;
-    width: 220px;
 }
 
 nav ul {
     display: flex;
     align-content: space-between;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     list-style-type: none;
     padding-inline-start: 0;
 }
 
 nav ul > a li {
+    margin: 10px;
     padding-top: 10px;
     width: 100px;
     height: 100px;
