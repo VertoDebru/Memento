@@ -285,6 +285,15 @@ class Mymemento {
                 this.memoTmp = this.memoTmp.replace(value, '<br />');
             });
         }
+        // Tabulations
+        let regTab = RegExp(/(\t)/g);
+        let arrayTab = this.memo.match(regTab);
+        console.log(arrayTab);
+        if(arrayTab) {
+            arrayTab.forEach( value => {
+                this.memoTmp = this.memoTmp.replace(value, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+            });
+        }
         // Code
         let regTagText = RegExp('({'+prefix+'})(.*?)({/'+prefix+'})', 'g');
         let arrayTag = this.memo.match(regTagText);
