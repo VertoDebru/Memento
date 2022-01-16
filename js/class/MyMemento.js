@@ -277,9 +277,15 @@ class Mymemento {
     encodeText(tag) {
         console.log(`Get text between ${tag}`);
         let prefix = this.getPrefix(tag);
+        // Linebreak
+        let regBr = RegExp(/(\n)+/g);
+        let arrayBr = this.memo.match(regBr);
+        arrayBr.forEach( value => {
+            this.memoTmp = this.memoTmp.replace(value, '<br />');
+        });
+        // Code
         let regTagText = RegExp('({'+prefix+'})(.*?)({/'+prefix+'})', 'g');
         let arrayTag = this.memo.match(regTagText);
-        // For all {tag}
         arrayTag.forEach( value => {
             let curTag = value.match(this.reg);
             if(curTag[0] == '{CODE}' ) this.memoTmp = this.memoTmp.replace(value, this.encodeHtml(value));
