@@ -14,6 +14,23 @@ exports.getAllCategories = (req,res) => {
     .catch(error => res.status(401).json({ error }));
 };
 
+exports.getOneCategory = (req,res) => {
+    console.log(`----------------------`);
+    console.log(`Get category from API memento.`);
+    
+    Category.find({ nameId: req.query.cat })
+    .then( (category) => {
+        if(!category) {
+            return res.status(404).send(new Error('Category not found!'));
+        }
+        console.log(category);
+        res.status(200).json({ category });
+        console.log(`Get category finished.`);
+        console.log(`----------------------`);
+    })
+    .catch(error => res.status(401).json({ error }));
+};
+
 // Add checking if nameId exist.
 exports.addNewCategory = (req,res) => {
     console.log(`----------------------`);
