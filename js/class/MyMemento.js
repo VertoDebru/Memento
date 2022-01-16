@@ -288,7 +288,6 @@ class Mymemento {
         // Tabulations
         let regTab = RegExp(/(\t)/g);
         let arrayTab = this.memo.match(regTab);
-        console.log(arrayTab);
         if(arrayTab) {
             arrayTab.forEach( value => {
                 this.memoTmp = this.memoTmp.replace(value, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
