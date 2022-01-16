@@ -65,7 +65,7 @@ class Mymemento {
         else {
             titlePage = `${this.data.title} | ${titlePage}`;
             let articleBox = document.createElement("article");
-            articleBox.innerHTML = `<h2>${this.data.title}</h2><p>${this.decodeMemo()}</p>`;
+            articleBox.innerHTML = `<h2>${this.data.title}</h2>${this.decodeMemo()}`;
             sectionBox.appendChild(articleBox);
         }
         this.mainBox.appendChild(sectionBox);
