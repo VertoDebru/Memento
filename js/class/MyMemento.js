@@ -278,7 +278,7 @@ class Mymemento {
         console.log(`Get text between ${tag}`);
         let prefix = this.getPrefix(tag);
         // Linebreak
-        let regBr = RegExp(/(\n)+/g);
+        let regBr = RegExp(/(\n)/g);
         let arrayBr = this.memo.match(regBr);
         if(arrayBr) {
             arrayBr.forEach( value => {
